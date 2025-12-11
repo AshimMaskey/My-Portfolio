@@ -25,7 +25,7 @@ const Education = () => {
   return (
     <>
       {" "}
-      <section id="projects" className="pt-20 px-4 scroll-mt-16">
+      <section id="education" className="pt-2 mb-18 px-4 scroll-mt-16">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-4">
             <h2 className="text-5xl font-bold">🎓 Education</h2>

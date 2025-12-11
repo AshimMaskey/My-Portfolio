@@ -10,8 +10,10 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "#about", label: "About" },
+    { href: "#education", label: "Education" },
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
+    { href: "#github", label: "GitHub" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -34,15 +36,22 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
+            <ul className="flex gap-6">
+              {navLinks.map((link, index) => (
+                // <a
+                //   key={link.href}
+                //   href={link.href}
+                //   className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium"
+                // >
+                //   {link.label}
+                // </a>
+                <Link href={link.href} key={index}>
+                  <li className="relative text-md text-foreground/70 hover:text-purple-500 duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-purple-500 hover:after:w-full after:transition-all">
+                    {link.label}
+                  </li>
+                </Link>
+              ))}
+            </ul>
           </div>
 
           <div className="flex items-center gap-2">

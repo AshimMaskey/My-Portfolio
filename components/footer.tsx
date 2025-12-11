@@ -1,7 +1,17 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  // Quick links as an array of objects
+  const quickLinks = [
+    { href: "#about", label: "About" },
+    { href: "#education", label: "Education" },
+    { href: "#experience", label: "Experience" },
+    { href: "#projects", label: "Projects" },
+    { href: "#github", label: "GitHub Contributions" },
+    { href: "#contact", label: "Contact" },
+  ];
 
   return (
     <footer className="border-t border-border bg-background">
@@ -9,10 +19,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="font-bold text-lg text-primary mb-2">Portfolio</h3>
+            <h3 className="font-bold text-lg text-primary mb-2">
+              {"<Ashim/Maskey>"}
+            </h3>
             <p className="text-foreground/60 text-sm">
-              Building beautiful digital experiences with modern web
-              technologies.
+              I build beautiful and user-friendly websites with modern web
+              technologies. Let&apos;s create something amazing together!
             </p>
           </div>
 
@@ -20,47 +32,25 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-foreground/60">
-              <li>
-                <a
-                  href="#about"
-                  className="hover:text-foreground transition-colors"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#experience"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Experience
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="hover:text-foreground transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="hover:text-foreground hover:underline transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Social Links */}
           <div>
             <h4 className="font-semibold mb-4">Connect</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-4">
               <a
-                href="https://github.com"
+                href="https://github.com/ashimmaskey"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-foreground transition-colors"
@@ -68,27 +58,25 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ashim-maskey-2a3400318/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-foreground transition-colors"
               >
                 <Linkedin size={20} />
               </a>
+
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-foreground transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="mailto:your@email.com"
+                href="mailto:ashimmaskey4@gmail.com"
                 className="text-foreground/60 hover:text-foreground transition-colors"
               >
                 <Mail size={20} />
               </a>
+            </div>
+            <div>
+              <p className="text-sm text-foreground/60">
+                Phone: +977-9869599949
+              </p>
             </div>
           </div>
         </div>

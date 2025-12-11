@@ -52,7 +52,7 @@ export default function WorkExperience() {
   return (
     <section
       id="experience"
-      className="py-20 px-4 scroll-mt-16 bg-gradient-to-b from-transparent via-accent/5 to-transparent"
+      className="pt-2 pb-20 px-4 scroll-mt-16 bg-gradient-to-b from-transparent via-accent/5 to-transparent"
     >
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="space-y-4">

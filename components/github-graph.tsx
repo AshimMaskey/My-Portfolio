@@ -1,6 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { ArrowRight, ArrowRightSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Hardcoded username
@@ -152,9 +153,19 @@ export default function GithubGraph() {
   const monthLabels = getMonthLabels(calendar.weeks);
 
   return (
-    <div className="max-w-6xl mb-20 mx-auto space-y-12">
-      <h2 className="text-5xl font-bold">🎓 Github Contributions</h2>
-      <Card className="p-6 border-primary/10 bg-gradient-to-br from-primary/5 to-accent/5">
+    <div
+      id="github"
+      className="max-w-6xl mt-2 mb-18 mx-auto space-y-10 scroll-mt-16"
+    >
+      <div>
+        <h2 className="text-5xl mb-4 font-bold">
+          <span className="text-5xl">📈</span> Github Contributions
+        </h2>
+        <p className="text-lg text-foreground/70">
+          My GitHub activity over the past year.
+        </p>
+      </div>
+      <Card className="p-6 border-primary/10 ">
         <div className="space-y-4">
           {/* Header */}
           <div className="flex items-center justify-between">
@@ -188,19 +199,19 @@ export default function GithubGraph() {
               <div className="flex gap-[3px]" style={{ paddingTop: "20px" }}>
                 {/* Day Labels */}
                 <div className="flex flex-col gap-[3px] pr-2">
-                  <div className="h-[10px]" /> {/* Sun - hidden */}
-                  <div className="h-[10px] text-[9px] text-muted-foreground flex items-center">
+                  <div className="h-[12px]" /> {/* Sun - hidden */}
+                  <div className="h-[12px] text-xs text-muted-foreground flex items-center">
                     Mon
                   </div>
-                  <div className="h-[10px]" /> {/* Tue - hidden */}
-                  <div className="h-[10px] text-[9px] text-muted-foreground flex items-center">
+                  <div className="h-[12px]" /> {/* Tue - hidden */}
+                  <div className="h-[12px] text-xs text-muted-foreground flex items-center">
                     Wed
                   </div>
-                  <div className="h-[10px]" /> {/* Thu - hidden */}
-                  <div className="h-[10px] text-[9px] text-muted-foreground flex items-center">
+                  <div className="h-[12px]" /> {/* Thu - hidden */}
+                  <div className="h-[10px] text-xs text-muted-foreground flex items-center">
                     Fri
                   </div>
-                  <div className="h-[10px]" /> {/* Sat - hidden */}
+                  <div className="h-[12px]" /> {/* Sat - hidden */}
                 </div>
 
                 {/* Contribution Squares */}
@@ -248,14 +259,24 @@ export default function GithubGraph() {
           <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
             <span>Less</span>
             <div className="flex gap-1">
-              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#9be9a8] dark:bg-[#0e4429]" />
               <div className="w-[12px] h-[12px] rounded-[2px] bg-[#ebedf0] dark:bg-[#161b22]" />
+              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#9be9a8] dark:bg-[#0e4429]" />
               <div className="w-[12px] h-[12px] rounded-[2px] bg-[#40c463] dark:bg-[#006d32]" />
               <div className="w-[12px] h-[12px] rounded-[2px] bg-[#30a14e] dark:bg-[#26a641]" />
               <div className="w-[12px] h-[12px] rounded-[2px] bg-[#216e39] dark:bg-[#39d353]" />
             </div>
             <span>More</span>
           </div>
+        </div>
+        <div className="pt-4 text-sm">
+          <a
+            href="https://github.com/ashimmaskey"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            View full contributions on GitHub
+          </a>
         </div>
       </Card>
     </div>

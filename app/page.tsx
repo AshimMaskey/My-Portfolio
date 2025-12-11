@@ -110,22 +110,23 @@ export default function Home() {
       title: "Shoe E-Commerce Platform",
       type: "Individual Project",
       description:
-        "A full-featured e-commerce platform built individually, with real-time inventory management, payment processing, and an admin dashboard.",
-      role: "Developed the user-side product pages, cart, wishlist functionality, and backend logic using Next.js and PostgreSQL.",
+        "A full-featured e-commerce platform built individually, with real-time product management, order processing, and an admin dashboard.",
+      role: "Developed the whole project e-commerce project using Next.js, PostgreSQL and other tech.",
       keyFeatures: [
-        "Real-time inventory updates",
-        "Stripe payment integration",
-        "Admin dashboard for managing products and orders",
+        "Attractive product listing and details",
+        "Authentication using clerk and cloudinary for file storage",
+        "Admin dashboard for viewing analytics with data visualization, managing products and orders",
       ],
       technologies: [
         "Next.js",
         "TypeScript",
+        "Tailwind CSS",
         "PostgreSQL",
         "Prisma ORM",
         "Shadcn/UI",
-        "Recharts.js",
         "Clerk Auth",
         "Cloudinary",
+        "Recharts.js",
       ],
       image: "/simple1.png",
       github: "https://github.com/AshimMaskey/simplesole",
@@ -135,12 +136,12 @@ export default function Home() {
       title: "Hemp Products E-Commerce",
       type: "Group Project",
       description:
-        "Collaborative e-commerce platform for hemp products, focusing on team development, real-time updates, and secure transactions.",
-      role: "Worked with a team to implement product listing, shopping cart, and payment system; contributed to backend APIs and GitHub collaboration.",
+        "Collaborative e-commerce platform for hemp products, focusing on team development, real-time updates, and order placement.",
+      role: "Worked with a team to implement product listing, shopping cart, and wishlist system, contributed to backend APIs and GitHub collaboration.",
       keyFeatures: [
         "Team collaboration with GitHub",
         "Real-time product updates",
-        "Secure checkout system",
+        "Admin dashboard for managing key metrices",
       ],
       technologies: [
         "Next.js",
@@ -162,7 +163,7 @@ export default function Home() {
       type: "Individual Project",
       description:
         "A system to manage novels and chapters for a web platform, including user accounts, reviews, and ratings.",
-      role: "Collaborated with the team on backend database design, REST API development, and user authentication.",
+      role: "Developed the whole novel management system including both frontend and backend of the website with recommendation algorithm",
       keyFeatures: [
         "Chapter and novel management",
         "User authentication and reviews",
@@ -175,6 +176,7 @@ export default function Home() {
         "MongoDB",
         "Tailwind CSS",
         "Shadcn/UI",
+        "Cloudinary",
       ],
       image: "/novel.png",
       github: "https://github.com/AshimMaskey/Novel-Management-System",
@@ -185,11 +187,12 @@ export default function Home() {
       type: "Individual Project",
       description:
         "Personal portfolio website showcasing projects, skills, and contact info with a responsive and interactive design.",
-      role: "Designed and implemented the full frontend using React, Tailwind CSS, and Next.js; integrated dynamic components and smooth animations.",
+      role: "Designed and implemented the full frontend using React, Tailwind CSS, and Next.js; integrated Shadcn/ UI for components",
       keyFeatures: [
         "Responsive and mobile-friendly design",
-        "Interactive hero and skills section",
-        "Contact form with API integration",
+        "Beautifully designed different sections",
+        "Dark theme and light theme integration",
+        "Contact form with mailing integration (nodemailer)",
       ],
       technologies: [
         "React",
@@ -199,8 +202,8 @@ export default function Home() {
         "Shadcn/UI",
       ],
       image: "/portfolio.png",
-      github: "https://github.com",
-      live: "https://example.com",
+      github: "https://github.com/AshimMaskey/My-Portfolio",
+      live: "https://ashim-maskey.vercel.app/",
     },
   ];
 
@@ -209,14 +212,14 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="mt-25 flex justify-center">
+      <section className="mt-25 mb-33 flex justify-center">
         <Hero />
       </section>
 
       {/* About Section */}
       <section
         id="about"
-        className="pt-33 px-4 scroll-mt-16 bg-gradient-to-b from-transparent via-primary/5 to-transparent"
+        className="pt-2 mb-18 px-4 scroll-mt-16 bg-gradient-to-b from-transparent via-primary/5 to-transparent"
       >
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-6">
@@ -291,13 +294,12 @@ export default function Home() {
 
       <Education />
       <WorkExperience />
-      <GithubGraph />
 
       {/* Projects Section */}
-      <section id="projects" className="pb-20 px-4 scroll-mt-16">
+      <section id="projects" className="pb-18 pt-2 px-4 scroll-mt-16">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-4">
-            <h2 className="text-5xl font-bold">Featured Projects</h2>
+            <h2 className="text-5xl font-bold">🚀 Featured Projects</h2>
             <p className="text-lg text-foreground/70">
               Here are some of my recent projects that showcase my skills and
               experience.
@@ -359,28 +361,35 @@ export default function Home() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-primary hover:text-accent transition-colors text-sm font-medium"
+                      className="flex hover:underline items-center gap-1 text-primary hover:text-accent transition-colors text-sm font-medium"
                     >
-                      <Github size={16} /> Code
+                      <Github size={16} /> View on GitHub
                     </a>
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-primary hover:text-accent transition-colors text-sm font-medium ml-auto"
+                      className="flex items-center hover:underline gap-1 text-primary hover:text-accent transition-colors text-sm font-medium ml-auto"
                     >
-                      Live <ArrowUpRight size={16} />
+                      Live Demo <ArrowUpRight size={16} />
                     </a>
                   </div>
+                  {project.title === "Novel Management System" && (
+                    <span className="text-red-600 text-sm mt-1">
+                      ⚠️ This project may take 2-3 minutes to load (backend
+                      hosted on Render)
+                    </span>
+                  )}
                 </div>
               </Card>
             ))}
           </div>
         </div>
       </section>
+      <GithubGraph />
 
       {/* Contact Section */}
-      <section id="contact" className="pb-20 px-4 scroll-mt-16">
+      <section id="contact" className="pb-20 pt-2 px-4 scroll-mt-16">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-4">
             <h2 className="text-5xl font-bold">💬 Get In Touch</h2>
@@ -520,7 +529,7 @@ export default function Home() {
               <button
                 type="submit"
                 disabled={loading} // disable button while sending
-                className={`w-full flex justify-center items-center gap-2 bg-purple-600 text-white py-3 rounded-lg font-medium transition-all duration-300 ${
+                className={`w-full cursor-pointer flex justify-center items-center gap-2 bg-purple-600 text-white py-3 rounded-lg font-medium transition-all duration-300 ${
                   loading ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >
