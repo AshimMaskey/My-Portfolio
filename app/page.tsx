@@ -212,7 +212,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="mt-7 md:mt-25 mb-33 flex justify-center">
+      <section className="mt-7 md:mt-25 mb-15 flex justify-center">
         <Hero />
       </section>
 
@@ -223,7 +223,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-6">
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-bold">
               {" "}
               <span className="text-primary">👋</span> About Me
             </h2>
@@ -248,7 +248,9 @@ export default function Home() {
 
           {/* Skills Section */}
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold">💻 Skills & Expertise</h3>
+            <h3 className="text-2xl md:text-3xl font-bold">
+              💻 Skills & Expertise
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {skills.map((skillGroup) => {
                 const IconComponent = skillGroup.icon;
@@ -299,7 +301,9 @@ export default function Home() {
       <section id="projects" className="pb-18 pt-2 px-4 scroll-mt-16">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-4">
-            <h2 className="text-5xl font-bold">🚀 Featured Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              🚀 Featured Projects
+            </h2>
             <p className="text-lg text-foreground/70">
               Here are some of my recent projects that showcase my skills and
               experience.
@@ -392,7 +396,7 @@ export default function Home() {
       <section id="contact" className="pb-20 pt-2 px-4 scroll-mt-16">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="space-y-4">
-            <h2 className="text-5xl font-bold">💬 Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">💬 Get In Touch</h2>
             <p className="text-lg text-foreground/70">
               I&apos;m actively open to full-time opportunities. Feel free to
               reach out—I would love to connect.

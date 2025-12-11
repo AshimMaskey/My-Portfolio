@@ -13,8 +13,9 @@ export default function Hero() {
         </div>
 
         <div className="max-w-6xl mx-auto px-4 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left">
+            {/* Left Content */}
+            <div className="space-y-8 flex flex-col items-center md:items-start">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
                   <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
@@ -23,8 +24,8 @@ export default function Hero() {
                   </span>
                 </div>
 
-                {/* mobile ko lagi img */}
-                <div className="flex md:hidden justify-start">
+                {/* Mobile Image */}
+                <div className="flex md:hidden justify-center">
                   <div className="relative w-40 sm:w-48 aspect-square rounded-full overflow-hidden border border-white/20 shadow-lg shadow-primary/20 ring-1 ring-primary/20">
                     <Image
                       src="/profile.jpg"
@@ -51,7 +52,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                 <a href="/resume.pdf" download>
                   <button className=" bg-purple-600 cursor-pointer text-white hover:-translate-y-1 px-8 py-3 rounded-sm font-medium flex items-center gap-2 transition-all duration-300">
                     <Download size={18} />
@@ -61,7 +62,7 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* img */}
+            {/* Right Image */}
             <div className="relative hidden md:flex items-center justify-center">
               <div className="relative w-3/4 aspect-square rounded-full overflow-hidden border border-white/20 shadow-xl shadow-primary/20 ring-1 ring-primary/30">
                 <Image
@@ -76,8 +77,8 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* scroll ko lagi */}
-      <div className="absolute md:bottom-5 bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* Scroll Button */}
+      <div className="flex justify-center mt-8 animate-bounce">
         <a href="#about" className="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"

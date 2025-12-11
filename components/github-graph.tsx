@@ -116,7 +116,7 @@ export default function GithubGraph() {
 
   if (loading) {
     return (
-      <Card className="p-6 border-primary/10 bg-linear-to-br from-primary/5 to-accent/5">
+      <Card className="p-6 max-w-6xl mx-auto border-primary/10 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="space-y-4 animate-pulse">
           <div className="flex items-center justify-between">
             <div className="h-6 w-40 bg-gray-200 dark:bg-gray-700 rounded" />
@@ -134,7 +134,7 @@ export default function GithubGraph() {
 
   if (error || !calendar) {
     return (
-      <Card className="p-6 border-primary/10 bg-linear-to-br from-primary/5 to-accent/5">
+      <Card className="p-6 max-w-6xl mx-auto border-primary/10 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="text-center text-muted-foreground">
           <p>Unable to load GitHub contributions</p>
           {error && <p className="text-sm mt-2">{error}</p>}
@@ -153,8 +153,8 @@ export default function GithubGraph() {
       className="max-w-6xl px-4 lg:px-0 mt-2 mb-18 mx-auto space-y-10 scroll-mt-16"
     >
       <div>
-        <h2 className="text-5xl mb-4 font-bold">
-          <span className="text-5xl">📈</span> Github Contributions
+        <h2 className="text-4xl md:text-5xl mb-4 font-bold">
+          <span className="text-4xl">📈</span> Github Contributions
         </h2>
         <p className="text-lg text-foreground/70">
           My GitHub activity over the past year.

@@ -56,7 +56,7 @@ export default function WorkExperience() {
     >
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="space-y-4">
-          <h2 className="text-5xl font-bold">💼 Work Experience</h2>
+          <h2 className="text-4xl md:text-5xl font-bold">💼 Work Experience</h2>
         </div>
 
         <div className="flex gap-4">
