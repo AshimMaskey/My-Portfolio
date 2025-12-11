@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Create your transporter
+    // creating transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -21,10 +21,10 @@ export async function POST(req: Request) {
       },
     });
 
-    // Email content
+    // email content
     const mailOptions = {
       from: process.env.MAIL_USER,
-      to: process.env.MAIL_USER, // receives email yourself
+      to: process.env.MAIL_USER,
       subject: `Portfolio Contact Form - Message from ${name}`,
       text: `
         Name: ${name}

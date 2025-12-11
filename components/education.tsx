@@ -59,8 +59,8 @@ const Education = () => {
                           <div
                             className={`hidden md:block absolute top-6 w-0 h-0 ${
                               index % 2 === 0
-                                ? "right-0 border-l-[15px] border-l-card dark:border-l-card border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent translate-x-full"
-                                : "left-0 border-r-[15px] border-r-card dark:border-r-card border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent -translate-x-full"
+                                ? "right-0 border-l-15 border-l-card dark:border-l-card border-t-10 border-t-transparent border-b-10 border-b-transparent translate-x-full"
+                                : "left-0 border-r-15 border-r-card dark:border-r-card border-t-10 border-t-transparent border-b-10 border-b-transparent -translate-x-full"
                             }`}
                           ></div>
 

@@ -1,11 +1,9 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { ArrowRight, ArrowRightSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// Hardcoded username
-const USERNAME = "ashimmaskey";
+const USERNAME = "AshimMaskey";
 
 interface ContributionDay {
   contributionCount: number;
@@ -22,7 +20,7 @@ interface GitHubCalendar {
   weeks: ContributionWeek[];
 }
 
-// Calculate current streak
+// current streak
 function calculateStreak(weeks: ContributionWeek[]): number {
   const allDays = weeks.flatMap((week) => week.contributionDays).reverse();
   let streak = 0;
@@ -38,7 +36,7 @@ function calculateStreak(weeks: ContributionWeek[]): number {
   return streak;
 }
 
-// Get color intensity based on contribution count (GitHub style)
+// color intensity
 function getColorIntensity(count: number): string {
   if (count === 0) return "bg-[#ebedf0] dark:bg-[#161b22]";
   if (count < 3) return "bg-[#9be9a8] dark:bg-[#0e4429]";
@@ -47,7 +45,7 @@ function getColorIntensity(count: number): string {
   return "bg-[#216e39] dark:bg-[#39d353]";
 }
 
-// Get month labels for the contribution grid
+// month labels
 function getMonthLabels(
   weeks: ContributionWeek[]
 ): { month: string; index: number }[] {
@@ -88,9 +86,6 @@ function getMonthLabels(
   return labels;
 }
 
-// Get day labels (Mon, Wed, Fri)
-const dayLabels = ["Mon", "Wed", "Fri"];
-
 export default function GithubGraph() {
   const [calendar, setCalendar] = useState<GitHubCalendar | null>(null);
   const [loading, setLoading] = useState(true);
@@ -121,7 +116,7 @@ export default function GithubGraph() {
 
   if (loading) {
     return (
-      <Card className="p-6 border-primary/10 bg-gradient-to-br from-primary/5 to-accent/5">
+      <Card className="p-6 border-primary/10 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="space-y-4 animate-pulse">
           <div className="flex items-center justify-between">
             <div className="h-6 w-40 bg-gray-200 dark:bg-gray-700 rounded" />
@@ -139,7 +134,7 @@ export default function GithubGraph() {
 
   if (error || !calendar) {
     return (
-      <Card className="p-6 border-primary/10 bg-gradient-to-br from-primary/5 to-accent/5">
+      <Card className="p-6 border-primary/10 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="text-center text-muted-foreground">
           <p>Unable to load GitHub contributions</p>
           {error && <p className="text-sm mt-2">{error}</p>}
@@ -155,7 +150,7 @@ export default function GithubGraph() {
   return (
     <div
       id="github"
-      className="max-w-6xl mt-2 mb-18 mx-auto space-y-10 scroll-mt-16"
+      className="max-w-6xl px-4 lg:px-0 mt-2 mb-18 mx-auto space-y-10 scroll-mt-16"
     >
       <div>
         <h2 className="text-5xl mb-4 font-bold">
@@ -179,7 +174,7 @@ export default function GithubGraph() {
               {/* Month Labels */}
               <div
                 className="flex mb-1 relative"
-                style={{ paddingLeft: "20px" }} // FIXED left padding
+                style={{ paddingLeft: "20px" }}
               >
                 {monthLabels.map((label, i) => (
                   <div
@@ -187,7 +182,6 @@ export default function GithubGraph() {
                     className="text-xs text-muted-foreground absolute"
                     style={{
                       left: `${label.index * 15 + 20}px`,
-                      // FIXED column width (13px)
                     }}
                   >
                     {label.month}
@@ -195,23 +189,22 @@ export default function GithubGraph() {
                 ))}
               </div>
 
-              {/* Grid Container */}
               <div className="flex gap-[3px]" style={{ paddingTop: "20px" }}>
                 {/* Day Labels */}
                 <div className="flex flex-col gap-[3px] pr-2">
-                  <div className="h-[12px]" /> {/* Sun - hidden */}
-                  <div className="h-[12px] text-xs text-muted-foreground flex items-center">
+                  <div className="h-3" />
+                  <div className="h-3 text-xs text-muted-foreground flex items-center">
                     Mon
                   </div>
-                  <div className="h-[12px]" /> {/* Tue - hidden */}
-                  <div className="h-[12px] text-xs text-muted-foreground flex items-center">
+                  <div className="h-3" />
+                  <div className="h-3 text-xs text-muted-foreground flex items-center">
                     Wed
                   </div>
-                  <div className="h-[12px]" /> {/* Thu - hidden */}
-                  <div className="h-[10px] text-xs text-muted-foreground flex items-center">
+                  <div className="h-3" />
+                  <div className="h-3 text-xs text-muted-foreground flex items-center">
                     Fri
                   </div>
-                  <div className="h-[12px]" /> {/* Sat - hidden */}
+                  <div className="h-3" />
                 </div>
 
                 {/* Contribution Squares */}
@@ -220,7 +213,7 @@ export default function GithubGraph() {
                     {week.contributionDays.map((day, dayIndex) => (
                       <div
                         key={dayIndex}
-                        className={`w-[12px] h-[12px] rounded-[2px] transition-all hover:ring-1 hover:ring-gray-400 dark:hover:ring-gray-600 cursor-pointer ${getColorIntensity(
+                        className={`w-3 h-3 rounded-[2px] transition-all hover:ring-1 hover:ring-gray-400 dark:hover:ring-gray-600 cursor-pointer ${getColorIntensity(
                           day.contributionCount
                         )}`}
                         title={`${
@@ -259,11 +252,11 @@ export default function GithubGraph() {
           <div className="flex items-center gap-2 text-xs text-muted-foreground pt-2">
             <span>Less</span>
             <div className="flex gap-1">
-              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#ebedf0] dark:bg-[#161b22]" />
-              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#9be9a8] dark:bg-[#0e4429]" />
-              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#40c463] dark:bg-[#006d32]" />
-              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#30a14e] dark:bg-[#26a641]" />
-              <div className="w-[12px] h-[12px] rounded-[2px] bg-[#216e39] dark:bg-[#39d353]" />
+              <div className="w-3 h-3 rounded-[2px] bg-[#ebedf0] dark:bg-[#161b22]" />
+              <div className="w-3 h-3 rounded-[2px] bg-[#9be9a8] dark:bg-[#0e4429]" />
+              <div className="w-3 h-3 rounded-[2px] bg-[#40c463] dark:bg-[#006d32]" />
+              <div className="w-3 h-3 rounded-[2px] bg-[#30a14e] dark:bg-[#26a641]" />
+              <div className="w-3 h-3 rounded-[2px] bg-[#216e39] dark:bg-[#39d353]" />
             </div>
             <span>More</span>
           </div>

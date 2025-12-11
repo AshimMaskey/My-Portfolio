@@ -52,7 +52,7 @@ export default function WorkExperience() {
   return (
     <section
       id="experience"
-      className="pt-2 pb-20 px-4 scroll-mt-16 bg-gradient-to-b from-transparent via-accent/5 to-transparent"
+      className="pt-2 pb-20 px-4 scroll-mt-16 bg-linear-to-b from-transparent via-accent/5 to-transparent"
     >
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="space-y-4">
@@ -61,7 +61,7 @@ export default function WorkExperience() {
 
         <div className="flex gap-4">
           <div className="flex flex-col items-center">
-            <div className="w-4 h-4 rounded-full bg-gradient-to-r from-primary to-accent mt-1.5 ring-4 ring-background"></div>
+            <div className="w-4 h-4 rounded-full bg-linear-to-r from-primary to-accent mt-1.5 ring-4 ring-background"></div>
           </div>
 
           <Card className="flex-1 p-6 border-primary/10 hover:border-primary/30 transition-colors">
@@ -85,6 +85,8 @@ export default function WorkExperience() {
               />
               <span>{experienceData.company}</span>
             </a>
+
+            {/* tabs for individual and group project */}
 
             <Tabs defaultValue="individual" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6">
@@ -137,7 +139,7 @@ export default function WorkExperience() {
                             key={idx}
                             className="flex items-start gap-2 text-sm text-foreground/70"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 mt-1.5 flex-shrink-0"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-blue-400 to-blue-600 mt-1.5 shrink-0"></span>
                             {highlight}
                           </li>
                         )
@@ -186,7 +188,7 @@ export default function WorkExperience() {
                             key={idx}
                             className="flex items-start gap-2 text-sm text-foreground/70"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-green-400 to-green-600 mt-1.5 flex-shrink-0"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-green-400 to-green-600 mt-1.5 shrink-0"></span>
                             {highlight}
                           </li>
                         )

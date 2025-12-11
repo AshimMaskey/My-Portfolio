@@ -41,8 +41,8 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true); // start loading
-    const toastId = toast.loading("Sending message..."); // show toast
+    setLoading(true);
+    const toastId = toast.loading("Sending message...");
 
     try {
       const res = await fetch("/api/contact", {
@@ -63,7 +63,7 @@ export default function Home() {
       console.error(error);
       toast.error("Something went wrong.", { id: toastId });
     } finally {
-      setLoading(false); // stop loading
+      setLoading(false);
     }
   };
   const skills = [
@@ -212,7 +212,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="mt-25 mb-33 flex justify-center">
+      <section className="mt-7 md:mt-25 mb-33 flex justify-center">
         <Hero />
       </section>
 
@@ -399,7 +399,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             {/* Email Card */}
             <Card className="p-6 card-hover border-primary/10 hover:border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5">
               <Mail className="w-8 h-8 text-primary mb-4" />

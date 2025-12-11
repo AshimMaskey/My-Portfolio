@@ -51,7 +51,7 @@ export async function GET(request: NextRequest) {
         query: GITHUB_QUERY,
         variables: { username },
       }),
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {

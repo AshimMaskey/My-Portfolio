@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* logo */}
           <Link
             href="#"
             onClick={handleNavClick}
@@ -34,19 +34,12 @@ export default function Navbar() {
             {"<Ashim/Maskey>"}
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* large screen nav */}
           <div className="hidden md:flex gap-8">
             <ul className="flex gap-6">
               {navLinks.map((link, index) => (
-                // <a
-                //   key={link.href}
-                //   href={link.href}
-                //   className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium"
-                // >
-                //   {link.label}
-                // </a>
                 <Link href={link.href} key={index}>
-                  <li className="relative text-md text-foreground/70 hover:text-purple-500 duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-purple-500 hover:after:w-full after:transition-all">
+                  <li className="relative text-md text-foreground/70 hover:text-purple-500 duration-300 after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-purple-500 hover:after:w-full after:transition-all">
                     {link.label}
                   </li>
                 </Link>
@@ -66,7 +59,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* mobile device nav */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2">
             {navLinks.map((link) => (
