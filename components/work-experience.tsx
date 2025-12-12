@@ -85,6 +85,14 @@ export default function WorkExperience() {
               />
               <span>{experienceData.company}</span>
             </a>
+            <a
+              href="/certificate.pdf"
+              download
+              className="text-sm text-primary hover:underline inline-flex items-center gap-1"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Download Certificate
+            </a>
 
             {/* tabs for individual and group project */}
 
